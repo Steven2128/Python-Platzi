@@ -12,6 +12,37 @@ def listar(ctx):
     """Listar platos en la pila"""
     pass
 
+#Lista de la cantidad de platos almacenados
+def list_cantidad():
+    print('La cantidad de Platos Ingresados Para Labar es : ',cantidadPlatos)
+   
+#Variable Global
+cantidadPlatos = []
+
+#Cantidad de Platos
+def cantidad_Platos(cantidad):
+    global cantidadPlatos
+    
+    if cantidad >= '1':
+        cantidadPlatos+=cantidad  
+    else: 
+        print ('La cantidad no es permitida \n 0 o se pasa de limite')
+
+
+#Ingreso de Cantidad de platos 
+def _get_Platos():
+    cantidad = input('Ingrese La Cantidad De Platos Que Desea Labar : ')
+
+    if cantidad >= '1':
+       
+        return cantidad  
+    else:
+        print ('Usted esta enviando la cantidad 0 Error \n Minimo 1')
+        _get_Platos() 
+  
+
+
+
 def print_welcome():
     message = '''
     BIENVENIDO A PLATZI-CLEAN'''
@@ -35,7 +66,10 @@ if __name__ == "__main__":
         command = input().upper()
 
         if command == 'A':
-            pass
+            cantidad = _get_Platos()
+            cantidad_Platos(cantidad)
+            list_cantidad()
+
         elif command == 'L':
             pass
         elif command == 'LI':
