@@ -1,12 +1,30 @@
+# Simulacion de plato
+add_plato = [10, 23, 5, 9]
+
 def agregar():
     """Agregar plato al lavabo"""
     pass
 
 
-def lavar(ctx):
-    """Lavar plato de la pila"""
-    pass
-           
+# def lavar():
+#     global add_plato
+
+#     while add_plato != 0:
+#         print(add_plato)
+#         cantidad = add_plato[0]
+#         print(f'Se esta labando la cantidad de {cantidad}')
+#         add_plato.pop(0)
+#         if not add_plato:
+#             print('La maquina hizo boom')
+#             break
+# Esta forma es mas automatica
+def lavar():
+    global add_plato
+
+    plato_lavado = add_plato.pop(0)
+
+    return plato_lavado
+
 
 def listar(ctx):
     """Listar platos en la pila"""
@@ -71,7 +89,11 @@ if __name__ == "__main__":
             list_cantidad()
 
         elif command == 'L':
-            pass
+            cantidad = lavar()
+            if cantidad != 0:
+                print(f'El plato lavado es {cantidad}')
+            else:
+                print('El robot hizo boom')
         elif command == 'LI':
             pass
         elif command == 'S':
