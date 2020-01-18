@@ -1,23 +1,4 @@
-# Simulacion de plato
-add_plato = [10, 23, 5, 9]
-
-def agregar():
-    """Agregar plato al lavabo"""
-    pass
-
-
-# def lavar():
-#     global add_plato
-
-#     while add_plato != 0:
-#         print(add_plato)
-#         cantidad = add_plato[0]
-#         print(f'Se esta labando la cantidad de {cantidad}')
-#         add_plato.pop(0)
-#         if not add_plato:
-#             print('La maquina hizo boom')
-#             break
-# Esta forma es mas automatica
+lavabo = True
 def lavar():
     global add_plato
 
@@ -29,29 +10,25 @@ def lavar():
     return plato_lavado
 
 
-def listar(ctx):
+def listar():
     """Listar platos en la pila"""
-    pass
+    print("Hay "+str(len(cantidadPlatos))+" platos en la pila")
+
 
 #Variable Global
-
 cantidadPlatos = []
-
-#Cantidad de Platos
 def cantidad_Platos(cantidad):
     global cantidadPlatos
     cantidadPlatos = list(range(1, cantidad+1))
-    print("Platos en la pila"+str(cantidadPlatos))
+    print("Se han agregado los platos correctamente!")
    
 
 
 #Ingreso de Cantidad de platos 
 def _get_Platos():
     cantidad = int(input('Ingrese La Cantidad De Platos Que Desea Labar : '))
-
     if cantidad >= 1:
-       
-        return cantidad  
+        return cantidad+len(cantidadPlatos)
     else:
         print ('Usted esta enviando la cantidad 0 Error \n Minimo 1')
         _get_Platos() 
@@ -82,18 +59,21 @@ if __name__ == "__main__":
         command = input().upper()
 
         if command == 'A':
-            cantidad = _get_Platos()
-            cantidad_Platos(cantidad)
-           
+            if lavabo is True:
+                cantidad = _get_Platos()
+                cantidad_Platos(cantidad)
+            else:
+                print("Lavabo roto!")
 
         elif command == 'L':
             cantidad = lavar()
             if cantidad != 0:
                 print(f'El plato lavado es {cantidad}')
             else:
+                lavabo = False
                 print('La maquina hizo boom')
         elif command == 'LI':
-            pass
+            listar()
         elif command == 'S':
             print("""
             Bye! ;)
