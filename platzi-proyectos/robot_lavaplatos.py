@@ -14,9 +14,10 @@ def listar(ctx):
 
 #Lista de la cantidad de platos almacenados
 def list_cantidad():
-    print('La cantidad de Platos Ingresados Para Labar es : ',cantidadPlatos)
+    print('La cantidad de Platos Ingresados Para Labar es : ',cantidadPlatos )
    
 #Variable Global
+
 cantidadPlatos = []
 
 #Cantidad de Platos
@@ -24,7 +25,7 @@ def cantidad_Platos(cantidad):
     global cantidadPlatos
     
     if cantidad >= '1':
-        cantidadPlatos+=cantidad  
+        cantidadPlatos.append(cantidad) 
     else: 
         print ('La cantidad no es permitida \n 0 o se pasa de limite')
 
