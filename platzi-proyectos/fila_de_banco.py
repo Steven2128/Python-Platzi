@@ -11,8 +11,7 @@ def add_client_deposit_row(client):
     
     client_deposit_row.append(client)
     print("""
-    Cliente agregado a la fila de deposito correctamente!
-    
+    Customer added to the correct deposit row!
     """)
 
 
@@ -20,31 +19,31 @@ def add_client_account_row(client):
     
     client_account_row.append(client)
     print("""
-    Cliente agregado a la fila de apertura de cuenta correctamente!
+    ustomer added to the account opening row correctly!
     """)
 
 
 def list_clients():
     print("""
-    Fila de deposito = """+str(len(client_deposit_row))+
+    Deposit Row = """+str(len(client_deposit_row))+
     """
-    Fila de apertura de cuenta = """+str(len(client_account_row)))
+    Account opening row = """+str(len(client_account_row)))
 
 
 def attend_client():
     if client_account_row:
         client_account_row.popleft()
         print("""
-        Cliente de fila de cuenta atendido!
+        Account row client has been serviced!
         """)
     elif not client_account_row and client_deposit_row:
         client_deposit_row.popleft()
         print("""
-        Cliente de deposito atendido!
+        Deposit client has been serviced!
         """)
     else:
         print("""
-    No hay clientes que atender!
+    There are no customers to attend!
         """)
         
 
@@ -81,7 +80,7 @@ if __name__ == '__main__':
             attend_client()
         elif command == 'L':
             list_clients()
-        elif command == 'S':
+        elif command == 'E':
             print("""
             Bye! ;)
             """)
