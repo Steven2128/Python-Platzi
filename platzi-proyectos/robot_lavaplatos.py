@@ -21,7 +21,10 @@ def agregar():
 def lavar():
     global add_plato
 
-    plato_lavado = add_plato.pop(0)
+    try:
+        plato_lavado = add_plato.pop(0)
+    except IndexError:
+        plato_lavado = 0
 
     return plato_lavado
 
@@ -93,7 +96,7 @@ if __name__ == "__main__":
             if cantidad != 0:
                 print(f'El plato lavado es {cantidad}')
             else:
-                print('El robot hizo boom')
+                print('La maquina hizo boom')
         elif command == 'LI':
             pass
         elif command == 'S':
