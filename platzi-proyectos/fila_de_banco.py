@@ -19,7 +19,7 @@ def add_client_account_row(client):
     
     client_account_row.append(client)
     print("""
-    ustomer added to the account opening row correctly!
+    Customer added to the account opening row correctly!
     """)
 
 
