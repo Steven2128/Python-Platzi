@@ -22,7 +22,7 @@ def lavar():
     global add_plato
 
     try:
-        plato_lavado = add_plato.pop(0)
+        plato_lavado = cantidadPlatos.pop()
     except IndexError:
         plato_lavado = 0
 
@@ -40,20 +40,16 @@ cantidadPlatos = []
 #Cantidad de Platos
 def cantidad_Platos(cantidad):
     global cantidadPlatos
-    
-    if cantidad >= '1':
-        for i in range (int(cantidad)):
-            print ('# ', i+1)
-           # cantidadPlatos.append(cantidad) 
-    else: 
-        print ('La cantidad no es permitida \n 0 o se pasa de limite')
+    cantidadPlatos = list(range(1, cantidad+1))
+    print("Platos en la pila"+str(cantidadPlatos))
+   
 
 
 #Ingreso de Cantidad de platos 
 def _get_Platos():
-    cantidad = input('Ingrese La Cantidad De Platos Que Desea Labar : ')
+    cantidad = int(input('Ingrese La Cantidad De Platos Que Desea Labar : '))
 
-    if cantidad >= '1':
+    if cantidad >= 1:
        
         return cantidad  
     else:
