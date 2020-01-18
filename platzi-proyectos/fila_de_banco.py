@@ -59,7 +59,7 @@ def _print_welcome():
     [AC] Add client to account opening row
     [ATC] Attend client
     [L] List clients in a row
-    [S] Salir 
+    [E] Exit 
     
     ''')
 
