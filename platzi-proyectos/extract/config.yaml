@@ -1,0 +1,15 @@
+news_sites:
+  bbc:
+    url: https://www.bbc.com
+    queries:
+      homepage_article_links: '.media__title a'
+      article_body: '.story-body__inner'
+      article_title: '.story-body h1'
+  eluniversal:
+    url: http://www.eluniversal.com.mx
+    queries:
+      homepage_article_links: '.field-content a'
+      article_body: '.field-name-body'
+      article_title: '.pane-content h1'
+  
+
